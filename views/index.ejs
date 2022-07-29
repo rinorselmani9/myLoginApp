@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,41 @@
 </head>
 <body>
 
-    <form action="http://localhost:5000/auth" method="POST">
+    <form action="http://localhost:5000/auth" method="GET">
 
         <input type="email" name="email" id="email" placeholder="Enter your email">
         <input type="password" name="password" id="password" placeholder="Enter your password">
 
         <button type="submit">Submit</button>
     </form>
+
+    <!-- <script>
+        const loginForm = document.getElementById('myForm')
+        if(loginForm){
+            loginForm.addEventListener('submit',async function(e){
+            e.preventDefault()
+            let email = document.getElementById('email')
+            let password = document.getElementById('password')
+            await login(email,password)
+            })
+        }
+        async function login(email,password){
+            const req = await fetch("http://localhost:5000/auth",{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({email,password})
+            })
+            const data = await req.json()
+
+            let user = await User.findOne({email:req.query.email})
+            console.log(user);
+
+            
+        }
+
+    </script> -->
     
 </body>
 </html>
