@@ -8,9 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <title>Main</title>
+    <title>Login</title>
 </head>
 <body>
-    <h1>Hello <%= user.email %></h1>
+     
+    <div class="container">
+    <form action="http://localhost:5000/auth" method="POST">
+        <h1>Login</h1>   
+
+        <input type="email" name="email" id="email" placeholder="Enter your email"><br>
+
+        <input type="password" name="password" id="password" placeholder="Enter your password"><br>
+
+        <button type="submit">Login</button>
+    </form>
+    </div>
 </body>
 </html>
